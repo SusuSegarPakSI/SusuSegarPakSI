@@ -36,5 +36,8 @@ class DatabaseSeeder extends Seeder
                 ]
             );
         }
+
+        // Call the Dummy Data Seeder to populate all features
+        $this->call(DummyDataSeeder::class);
     }
 }

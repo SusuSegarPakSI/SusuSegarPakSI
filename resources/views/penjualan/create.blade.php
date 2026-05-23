@@ -118,7 +118,7 @@
                                         ? 'bg-white dark:bg-slate-900 border-amber-300 dark:border-amber-900/60 hover:border-amber-500/80 cursor-pointer shadow-sm hover:shadow-md hover:-translate-y-0.5' 
                                         : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-indigo-500/60 cursor-pointer shadow-sm hover:shadow-md hover:-translate-y-0.5')
                                     : 'bg-slate-100/60 dark:bg-slate-950/20 border-slate-200 dark:border-slate-900 opacity-50 cursor-not-allowed'"
-                                 class="border rounded-2xl p-4.5 flex flex-col justify-between h-40 transition-all duration-200 relative overflow-hidden group select-none">
+                                 class="border rounded-2xl p-5 flex flex-col justify-between h-40 transition-all duration-200 relative overflow-hidden group select-none">
                                 
                                 <!-- Soft aura gradient on hover -->
                                 <div x-show="p.stok > 0" class="absolute -inset-y-0 -inset-x-0 bg-gradient-to-tr from-indigo-500/0 via-indigo-500/5 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -168,7 +168,7 @@
     <div class="w-full lg:w-[38%] flex flex-col bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-md overflow-hidden min-h-[500px]">
         
         <!-- Cart Header -->
-        <div class="px-5 py-4.5 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 flex items-center justify-between shrink-0">
+        <div class="px-5 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 flex items-center justify-between shrink-0">
             <div class="flex items-center gap-2">
                 <div class="p-1.5 bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 rounded-lg">
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
@@ -216,7 +216,7 @@
                     </div>
 
                     <!-- Remove row -->
-                    <button type="button" @click="removeFromCart(item.produk_id)" class="text-slate-300 hover:text-red-500 dark:text-slate-700 dark:hover:text-red-400 p-1 rounded-md hover:bg-red-50 dark:hover:bg-red-950/20 shrink-0 transition-colors">
+                    <button type="button" @click="removeFromCart(item.produk_id)" class="text-slate-300 hover:text-red-500 dark:text-slate-700 dark:hover:text-red-400 p-2 rounded-md hover:bg-red-50 dark:hover:bg-red-950/20 shrink-0 transition-colors">
                         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                         </svg>

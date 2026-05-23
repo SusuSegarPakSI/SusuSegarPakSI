@@ -1,0 +1,40 @@
+<?php
+
+return [
+    [
+        'kode_pelanggan' => 'CST-001',
+        'nama' => 'Toko Kelontong Bu Retno',
+        'tipe' => 'Mitra',
+        'telepon' => '082133445566',
+        'email' => 'retno.kelontong@gmail.com',
+        'alamat' => 'Sleman, Yogyakarta',
+        'catatan' => 'Mitra reseller rutin mingguan',
+        'saldo_piutang' => 285000.00,
+        'saldo_awal_piutang' => 1200000.00,
+        'is_active' => true,
+    ],
+    [
+        'kode_pelanggan' => 'CST-002',
+        'nama' => 'Cafetaria Universitas Gadjah Mada',
+        'tipe' => 'Mitra',
+        'telepon' => '087812345678',
+        'email' => 'cafe.ugm@ugm.ac.id',
+        'alamat' => 'Depok, Sleman, Yogyakarta',
+        'catatan' => 'Pembayaran tempo 30 hari',
+        'saldo_piutang' => 0.00,
+        'saldo_awal_piutang' => 3500000.00,
+        'is_active' => true,
+    ],
+    [
+        'kode_pelanggan' => 'CST-003',
+        'nama' => 'Aditya Pratama',
+        'tipe' => 'Perorangan',
+        'telepon' => '081299887766',
+        'email' => 'adit.pratama@yahoo.com',
+        'alamat' => 'Kota Yogyakarta',
+        'catatan' => 'Pelanggan retail harian',
+        'saldo_piutang' => 0.00,
+        'saldo_awal_piutang' => 0.00,
+        'is_active' => true,
+    ],
+];

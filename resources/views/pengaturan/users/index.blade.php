@@ -119,7 +119,7 @@ class="space-y-6">
                                 <div class="flex items-center justify-end gap-1 sm:opacity-0 group-hover:opacity-100 transition-opacity">
                                     <!-- Edit Button -->
                                     <button @click="editUser = { id: '{{ $user->id }}', name: '{{ $user->name }}', email: '{{ $user->email }}' }; openEdit = true" 
-                                            class="p-1.5 rounded text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:text-indigo-400 dark:hover:bg-indigo-950/50 transition-colors" 
+                                            class="p-2 rounded text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:text-indigo-400 dark:hover:bg-indigo-950/50 transition-colors" 
                                             title="Ubah Profil">
                                         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Z" />
@@ -128,7 +128,7 @@ class="space-y-6">
 
                                     <!-- Status Toggle Button -->
                                     <button @click="toggleUser = { id: '{{ $user->id }}', name: '{{ $user->name }}', active: {{ $user->is_active ? 'true' : 'false' }}, url: '{{ route('users.toggle', $user->id) }}' }; openToggle = true" 
-                                            class="p-1.5 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-100 dark:hover:text-slate-300 dark:hover:bg-slate-800 transition-colors" 
+                                            class="p-2 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-100 dark:hover:text-slate-300 dark:hover:bg-slate-800 transition-colors" 
                                             title="{{ $user->is_active ? 'Nonaktifkan Akun' : 'Aktifkan Akun' }}">
                                         @if ($user->is_active)
                                             <!-- Block/Deactivate Icon -->

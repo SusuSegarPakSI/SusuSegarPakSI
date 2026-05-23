@@ -7,6 +7,9 @@ use App\Http\Controllers\MasterDataController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PembelianController;
+use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\LaporanController;
 use Illuminate\Support\Facades\Route;
 
 // Redirect root to dashboard (will hit auth middleware and redirect to login)
@@ -106,10 +109,37 @@ Route::middleware(['auth', 'role:manajer,admin'])->group(function () {
             Route::post('/{produkId}', [\App\Http\Controllers\ProduksiController::class, 'bomUpdate'])->name('update');
         });
     });
-    Route::get('/pembelian', fn() => view('placeholder', ['title' => 'Pembelian']))->name('pembelian.index');
-    Route::get('/persediaan', fn() => view('placeholder', ['title' => 'Persediaan']))->name('persediaan.index');
+
+    // ─── Pembelian Bahan Baku ───────────────────────────────────
+    Route::prefix('pembelian')->name('pembelian.')->group(function () {
+        Route::get('/', [PembelianController::class, 'index'])->name('index');
+        Route::get('/create', [PembelianController::class, 'create'])->name('create');
+        Route::post('/', [PembelianController::class, 'store'])->name('store');
+        Route::get('/{pembelian}', [PembelianController::class, 'show'])->name('show');
+        Route::post('/{pembelian}/bayar', [PembelianController::class, 'bayarHutang'])->name('bayar');
+    });
+
+    // ─── Persediaan / Inventory ──────────────────────────────────
+    Route::prefix('persediaan')->name('persediaan.')->group(function () {
+        Route::get('/', [InventoryController::class, 'index'])->name('index');
+        Route::get('/adjustment', [InventoryController::class, 'createAdjustment'])->name('adjustment');
+        Route::post('/adjustment', [InventoryController::class, 'storeAdjustment'])->name('adjustment.store');
+        Route::get('/kartu-stok/{type}/{id}', [InventoryController::class, 'kartuStok'])->name('kartu_stok');
+        Route::get('/kartu-stok/{type}/{id}/export', [InventoryController::class, 'export'])->name('kartu_stok.export');
+    });
+
+    // ─── Laporan Keuangan ────────────────────────────────────────
+    Route::prefix('laporan')->name('laporan.')->group(function () {
+        Route::get('/', [LaporanController::class, 'index'])->name('index');
+        Route::post('/beban', [LaporanController::class, 'storeBebanLain'])->name('beban.store');
+        Route::delete('/beban/{bebanLain}', [LaporanController::class, 'destroyBebanLain'])->name('beban.destroy');
+        Route::post('/saldo-awal', [LaporanController::class, 'setSaldoAwal'])->name('saldo.set');
+        Route::get('/laba-rugi/export', [LaporanController::class, 'exportLabaRugi'])->name('laba-rugi.export');
+        Route::get('/arus-kas/export', [LaporanController::class, 'exportArusKas'])->name('arus-kas.export');
+        Route::get('/neraca/export', [LaporanController::class, 'exportNeraca'])->name('neraca.export');
+    });
+
     Route::get('/sdm', fn() => view('placeholder', ['title' => 'SDM & Penggajian']))->name('sdm.index');
-    Route::get('/laporan', fn() => view('placeholder', ['title' => 'Laporan Keuangan']))->name('laporan.index');
 });
 
 // Routes for Manajer ONLY

@@ -1,0 +1,43 @@
+<?php
+
+return [
+    [
+        'kode_produk' => 'PRD-001',
+        'nama_produk' => 'Susu Segar Strawberry 250ml',
+        'kategori' => 'Susu Rasa',
+        'satuan' => 'Botol',
+        'deskripsi' => 'Susu segar murni rasa strawberi segar dikemas botol 250ml',
+        'harga_jual' => 6000.00,
+        'harga_pokok' => 3500.00,
+        'stok' => 150,
+        'stok_minimum' => 50,
+        'foto' => null,
+        'is_active' => true,
+    ],
+    [
+        'kode_produk' => 'PRD-002',
+        'nama_produk' => 'Susu Segar Cokelat 250ml',
+        'kategori' => 'Susu Rasa',
+        'satuan' => 'Botol',
+        'deskripsi' => 'Susu segar murni rasa cokelat premium dikemas botol 250ml',
+        'harga_jual' => 6000.00,
+        'harga_pokok' => 3600.00,
+        'stok' => 200,
+        'stok_minimum' => 50,
+        'foto' => null,
+        'is_active' => true,
+    ],
+    [
+        'kode_produk' => 'PRD-003',
+        'nama_produk' => 'Susu Segar Plain (Murni) 250ml',
+        'kategori' => 'Susu Murni',
+        'satuan' => 'Botol',
+        'deskripsi' => 'Susu segar pasteurisasi murni alami tanpa pemanis tambahan',
+        'harga_jual' => 5500.00,
+        'harga_pokok' => 3000.00,
+        'stok' => 100,
+        'stok_minimum' => 30,
+        'foto' => null,
+        'is_active' => true,
+    ],
+];

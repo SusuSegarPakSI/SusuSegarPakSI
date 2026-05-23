@@ -1,0 +1,70 @@
+<?php
+
+return [
+    [
+        'kode_bahan' => 'BB-001',
+        'nama_bahan' => 'Susu Murni Segar',
+        'kategori' => 'Baku',
+        'satuan' => 'Liter',
+        'stok' => 500,
+        'stok_minimum' => 100,
+        'harga_rata_rata' => 8000.00,
+        'supplier_utama_id' => 1, // Peternakan Segar Jaya
+        'is_active' => true,
+    ],
+    [
+        'kode_bahan' => 'BB-002',
+        'nama_bahan' => 'Gula Pasir',
+        'kategori' => 'Penolong',
+        'satuan' => 'Kg',
+        'stok' => 120,
+        'stok_minimum' => 20,
+        'harga_rata_rata' => 15000.00,
+        'supplier_utama_id' => 3, // Distributor Gula Manisku
+        'is_active' => true,
+    ],
+    [
+        'kode_bahan' => 'BB-003',
+        'nama_bahan' => 'Perisa Strawberi',
+        'kategori' => 'Penolong',
+        'satuan' => 'Liter',
+        'stok' => 15,
+        'stok_minimum' => 5,
+        'harga_rata_rata' => 90000.00,
+        'supplier_utama_id' => 3,
+        'is_active' => true,
+    ],
+    [
+        'kode_bahan' => 'BB-004',
+        'nama_bahan' => 'Perisa Cokelat Premium',
+        'kategori' => 'Penolong',
+        'satuan' => 'Liter',
+        'stok' => 20,
+        'stok_minimum' => 5,
+        'harga_rata_rata' => 95000.00,
+        'supplier_utama_id' => 3,
+        'is_active' => true,
+    ],
+    [
+        'kode_bahan' => 'BB-005',
+        'nama_bahan' => 'Botol Plastik 250ml',
+        'kategori' => 'Kemasan',
+        'satuan' => 'Pcs',
+        'stok' => 2500,
+        'stok_minimum' => 500,
+        'harga_rata_rata' => 800.00,
+        'supplier_utama_id' => 2, // Pabrik Kemasan Packindo
+        'is_active' => true,
+    ],
+    [
+        'kode_bahan' => 'BB-006',
+        'nama_bahan' => 'Label Kemasan Susu Segar',
+        'kategori' => 'Kemasan',
+        'satuan' => 'Pcs',
+        'stok' => 3000,
+        'stok_minimum' => 500,
+        'harga_rata_rata' => 200.00,
+        'supplier_utama_id' => 2,
+        'is_active' => true,
+    ],
+];

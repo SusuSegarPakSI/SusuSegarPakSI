@@ -42,6 +42,48 @@
         #app-shell.sidebar-collapsed .sidebar-label {
             display: none;
         }
+        
+        #app-shell.sidebar-collapsed #sidebar a, 
+        #app-shell.sidebar-collapsed #sidebar button {
+            justify-content: center;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        
+        #app-shell.sidebar-collapsed #sidebar .flex.items-center.gap-3 {
+            gap: 0;
+        }
+
+        /* Premium hover expand effect on desktop collapsed sidebar */
+        @media (min-width: 1024px) {
+            #app-shell.sidebar-collapsed #sidebar {
+                transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s;
+            }
+            #app-shell.sidebar-collapsed #sidebar:hover {
+                width: 240px; /* w-60 */
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            }
+            #app-shell.sidebar-collapsed #sidebar:hover .sidebar-label {
+                display: inline-block;
+            }
+            #app-shell.sidebar-collapsed #sidebar:hover a, 
+            #app-shell.sidebar-collapsed #sidebar:hover button {
+                justify-content: flex-start;
+                padding-left: 0.75rem; /* px-3 */
+                padding-right: 0.75rem;
+            }
+            #app-shell.sidebar-collapsed #sidebar:hover .flex.items-center.gap-3 {
+                gap: 0.75rem;
+            }
+            #app-shell.sidebar-collapsed #sidebar:hover .justify-between {
+                justify-content: space-between;
+            }
+        }
+
+        /* Dynamic Arrow Indicator in Sidebar Collapse Button */
+        #app-shell.sidebar-collapsed .arrow-indicator {
+            transform: scaleX(-1);
+        }
     </style>
 </head>
 <body class="bg-slate-50 dark:bg-slate-950 font-sans antialiased text-slate-800 dark:text-slate-200 h-full overflow-hidden">
@@ -56,25 +98,24 @@
                class="flex flex-col w-60 shrink-0 border-r border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-800 transition-all duration-200 ease-in-out lg:relative lg:translate-x-0 fixed inset-y-0 left-0 z-50 -translate-x-full lg:translate-x-0"
                aria-label="Sidebar navigasi">
 
+            <!-- Floating desktop collapse button (merged with sidebar) -->
+            <button onclick="toggleSidebarCollapse()"
+                    class="hidden lg:flex absolute top-4 -right-3 z-55 items-center justify-center w-6 h-6 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 shadow-sm hover:shadow transition-all duration-200 cursor-pointer"
+                    title="Sembunyikan/Tampilkan Sidebar (Ctrl+B)"
+                    aria-label="Collapse sidebar">
+                <svg class="w-3.5 h-3.5 transition-transform duration-300 ease-in-out origin-center arrow-indicator" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+            </button>
+
             <!-- Logo / Brand -->
             <div class="flex items-center justify-between h-14 px-4 border-b border-slate-200 dark:border-slate-800 shrink-0">
                 <div class="flex items-center gap-2.5 overflow-hidden">
-                    <div class="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center shrink-0 shadow-sm">
-                        <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582" />
-                        </svg>
-                    </div>
+                    <img src="{{ asset('LOGO.png') }}" class="w-8 h-8 rounded-lg object-contain shrink-0 shadow-sm" alt="Logo Susu Segar Pak Si">
                     <span class="text-sm font-semibold text-slate-900 dark:text-white sidebar-label truncate">
                         Susu Segar Pak Si
                     </span>
                 </div>
-
-                <!-- Collapse button for desktop -->
-                <button onclick="toggleSidebarCollapse()" class="hidden lg:block p-1 rounded-md text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 sidebar-label">
-                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                    </svg>
-                </button>
             </div>
 
             <!-- Navigation -->
@@ -101,12 +142,6 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75" />
                         </svg>
                         <span class="sidebar-label flex-1 text-left truncate">Master Data</span>
-                        @role('manajer')
-                            <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" title="Lihat Saja">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                            </svg>
-                        @endrole
                         <svg class="w-4 h-4 shrink-0 sidebar-label transition-transform" :class="openMaster ? 'rotate-90' : ''" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                         </svg>
@@ -129,11 +164,6 @@
                         </svg>
                         <span class="sidebar-label truncate">Penjualan</span>
                     </div>
-                    @role('manajer')
-                        <svg class="w-3.5 h-3.5 text-slate-400 shrink-0 sidebar-label" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" title="Lihat Saja">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                        </svg>
-                    @endrole
                 </a>
 
                 {{-- Produksi --}}
@@ -146,11 +176,6 @@
                         </svg>
                         <span class="sidebar-label truncate">Produksi</span>
                     </div>
-                    @role('manajer')
-                        <svg class="w-3.5 h-3.5 text-slate-400 shrink-0 sidebar-label" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" title="Lihat Saja">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                        </svg>
-                    @endrole
                 </a>
 
                 {{-- Resep BOM --}}
@@ -162,11 +187,6 @@
                         </svg>
                         <span class="sidebar-label truncate">Resep BOM</span>
                     </div>
-                    @role('manajer')
-                        <svg class="w-3.5 h-3.5 text-slate-400 shrink-0 sidebar-label" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" title="Lihat Saja">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                        </svg>
-                    @endrole
                 </a>
 
                 {{-- Pembelian --}}
@@ -178,11 +198,6 @@
                         </svg>
                         <span class="sidebar-label truncate">Pembelian</span>
                     </div>
-                    @role('manajer')
-                        <svg class="w-3.5 h-3.5 text-slate-400 shrink-0 sidebar-label" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" title="Lihat Saja">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                        </svg>
-                    @endrole
                 </a>
 
                 {{-- Persediaan --}}
@@ -194,11 +209,6 @@
                         </svg>
                         <span class="sidebar-label truncate">Persediaan</span>
                     </div>
-                    @role('manajer')
-                        <svg class="w-3.5 h-3.5 text-slate-400 shrink-0 sidebar-label" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" title="Lihat Saja">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                        </svg>
-                    @endrole
                 </a>
 
                 {{-- SDM & Penggajian --}}
@@ -211,11 +221,6 @@
                         </svg>
                         <span class="sidebar-label truncate">SDM & Penggajian</span>
                     </div>
-                    @role('manajer')
-                        <svg class="w-3.5 h-3.5 text-slate-400 shrink-0 sidebar-label" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" title="Lihat Saja">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                        </svg>
-                    @endrole
                 </a>
 
                 {{-- Laporan Keuangan --}}
@@ -326,6 +331,7 @@
                         </svg>
                     </button>
 
+
                     <!-- Breadcrumb -->
                     <nav aria-label="Breadcrumb">
                         <ol class="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
@@ -426,6 +432,58 @@
             document.getElementById('app-shell').classList.toggle('sidebar-collapsed');
             localStorage.setItem('sidebar-collapsed',
                 document.getElementById('app-shell').classList.contains('sidebar-collapsed'));
+        }
+
+        // Keyboard Shortcut: Ctrl + B or Cmd + B to toggle sidebar collapse/mobile open
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT' || e.target.isContentEditable) {
+                return;
+            }
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'b') {
+                e.preventDefault();
+                if (window.innerWidth >= 1024) {
+                    toggleSidebarCollapse();
+                } else {
+                    toggleSidebar();
+                }
+            }
+        });
+
+        // Swipe gestures for mobile sidebar (Swipe right from edge to open, swipe left to close)
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchEndX = 0;
+        let touchEndY = 0;
+
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            touchEndY = e.changedTouches[0].screenY;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const diffX = touchEndX - touchStartX;
+            const diffY = touchEndY - touchStartY;
+            
+            // horizontal swipe threshold and validity check
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 75) {
+                const sidebar = document.getElementById('sidebar');
+                const backdrop = document.getElementById('sidebar-backdrop');
+                const isCollapsed = sidebar.classList.contains('-translate-x-full');
+                
+                if (diffX > 0 && touchStartX < 40 && isCollapsed) {
+                    // Swipe right from left edge: open sidebar
+                    toggleSidebar();
+                } else if (diffX < 0 && !isCollapsed) {
+                    // Swipe left: close sidebar
+                    closeSidebar();
+                }
+            }
         }
     </script>
 </body>

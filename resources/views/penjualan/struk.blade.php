@@ -128,7 +128,11 @@
         <div class="text-center mb-4">
             <h1 class="text-base font-bold tracking-tight text-slate-900 uppercase">Susu Segar Pak SI</h1>
             <p class="text-[9px] text-slate-500 font-medium">Murni, Segar, Menyehatkan</p>
-            <p class="text-[9px] text-slate-500 mt-1">Jl. Kaliurang KM 12.5, Sleman, Yogyakarta</p>
+            <p class="text-[9px] text-slate-500 mt-1 leading-relaxed">
+                Jl. Desa Sumogawe, Pringapus,<br>
+                Sumogawe, Kec. Getasan, Kabupaten<br>
+                Semarang, Jawa Tengah 50774
+            </p>
             <p class="text-[9px] text-slate-500">Telp: 0812-3456-7890</p>
         </div>
 

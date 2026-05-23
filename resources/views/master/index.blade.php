@@ -181,15 +181,15 @@
                                 </td>
                                 <td class="px-5 py-3.5 text-right">
                                     <div class="flex items-center justify-end gap-1 sm:opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <a href="{{ route('master.produk.show', $produk) }}" class="p-1.5 rounded text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:text-indigo-400 dark:hover:bg-indigo-950/50 transition-colors" title="Lihat Detail">
+                                        <a href="{{ route('master.produk.show', $produk) }}" class="p-2 rounded text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:text-indigo-400 dark:hover:bg-indigo-950/50 transition-colors" title="Lihat Detail">
                                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" /></svg>
                                         </a>
                                         @role('admin')
-                                        <a href="{{ route('master.produk.edit', $produk) }}" class="p-1.5 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-100 dark:hover:text-slate-300 dark:hover:bg-slate-800 transition-colors" title="Edit">
+                                        <a href="{{ route('master.produk.edit', $produk) }}" class="p-2 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-100 dark:hover:text-slate-300 dark:hover:bg-slate-800 transition-colors" title="Edit">
                                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Z" /></svg>
                                         </a>
                                         <button @click="toggleItem = { id: '{{ $produk->id }}', name: '{{ $produk->nama_produk }}', active: {{ $produk->is_active ? 'true' : 'false' }}, url: '{{ route('master.produk.toggle', $produk) }}' }; openToggle = true"
-                                                class="p-1.5 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-100 dark:hover:text-slate-300 dark:hover:bg-slate-800 transition-colors" title="{{ $produk->is_active ? 'Nonaktifkan' : 'Aktifkan' }}">
+                                                class="p-2 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-100 dark:hover:text-slate-300 dark:hover:bg-slate-800 transition-colors" title="{{ $produk->is_active ? 'Nonaktifkan' : 'Aktifkan' }}">
                                             @if ($produk->is_active)
                                                 <svg class="w-4 h-4 text-red-500 dark:text-red-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 0 0 5.636 5.636m12.728 12.728A9 9 0 0 1 5.636 5.636m12.728 12.728L5.636 5.636" /></svg>
                                             @else
@@ -295,15 +295,15 @@
                                 </td>
                                 <td class="px-5 py-3.5 text-right">
                                     <div class="flex items-center justify-end gap-1 sm:opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <a href="{{ route('master.bahan-baku.show', $bahan) }}" class="p-1.5 rounded text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:text-indigo-400 dark:hover:bg-indigo-950/50 transition-colors" title="Lihat Detail">
+                                        <a href="{{ route('master.bahan-baku.show', $bahan) }}" class="p-2 rounded text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:text-indigo-400 dark:hover:bg-indigo-950/50 transition-colors" title="Lihat Detail">
                                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" /></svg>
                                         </a>
                                         @role('admin')
-                                        <a href="{{ route('master.bahan-baku.edit', $bahan) }}" class="p-1.5 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-100 dark:hover:text-slate-300 dark:hover:bg-slate-800 transition-colors" title="Edit">
+                                        <a href="{{ route('master.bahan-baku.edit', $bahan) }}" class="p-2 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-100 dark:hover:text-slate-300 dark:hover:bg-slate-800 transition-colors" title="Edit">
                                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Z" /></svg>
                                         </a>
                                         <button @click="toggleItem = { id: '{{ $bahan->id }}', name: '{{ $bahan->nama_bahan }}', active: {{ $bahan->is_active ? 'true' : 'false' }}, url: '{{ route('master.bahan-baku.toggle', $bahan) }}' }; openToggle = true"
-                                                class="p-1.5 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-100 dark:hover:text-slate-300 dark:hover:bg-slate-800 transition-colors" title="{{ $bahan->is_active ? 'Nonaktifkan' : 'Aktifkan' }}">
+                                                class="p-2 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-100 dark:hover:text-slate-300 dark:hover:bg-slate-800 transition-colors" title="{{ $bahan->is_active ? 'Nonaktifkan' : 'Aktifkan' }}">
                                             @if ($bahan->is_active)
                                                 <svg class="w-4 h-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 0 0 5.636 5.636m12.728 12.728A9 9 0 0 1 5.636 5.636m12.728 12.728L5.636 5.636" /></svg>
                                             @else
@@ -407,15 +407,15 @@
                                 </td>
                                 <td class="px-5 py-3.5 text-right">
                                     <div class="flex items-center justify-end gap-1 sm:opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <a href="{{ route('master.pelanggan.show', $customer) }}" class="p-1.5 rounded text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:text-indigo-400 dark:hover:bg-indigo-950/50 transition-colors" title="Lihat Detail">
+                                        <a href="{{ route('master.pelanggan.show', $customer) }}" class="p-2 rounded text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:text-indigo-400 dark:hover:bg-indigo-950/50 transition-colors" title="Lihat Detail">
                                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" /></svg>
                                         </a>
                                         @role('admin')
-                                        <a href="{{ route('master.pelanggan.edit', $customer) }}" class="p-1.5 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-100 dark:hover:text-slate-300 dark:hover:bg-slate-800 transition-colors" title="Edit">
+                                        <a href="{{ route('master.pelanggan.edit', $customer) }}" class="p-2 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-100 dark:hover:text-slate-300 dark:hover:bg-slate-800 transition-colors" title="Edit">
                                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Z" /></svg>
                                         </a>
                                         <button @click="toggleItem = { id: '{{ $customer->id }}', name: '{{ $customer->nama }}', active: {{ $customer->is_active ? 'true' : 'false' }}, url: '{{ route('master.pelanggan.toggle', $customer) }}' }; openToggle = true"
-                                                class="p-1.5 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-100 dark:hover:text-slate-300 dark:hover:bg-slate-800 transition-colors" title="{{ $customer->is_active ? 'Nonaktifkan' : 'Aktifkan' }}">
+                                                class="p-2 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-105 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="{{ $customer->is_active ? 'Nonaktifkan' : 'Aktifkan' }}">
                                             @if ($customer->is_active)
                                                 <svg class="w-4 h-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 0 0 5.636 5.636m12.728 12.728A9 9 0 0 1 5.636 5.636m12.728 12.728L5.636 5.636" /></svg>
                                             @else
@@ -512,15 +512,15 @@
                                 </td>
                                 <td class="px-5 py-3.5 text-right">
                                     <div class="flex items-center justify-end gap-1 sm:opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <a href="{{ route('master.supplier.show', $supplier) }}" class="p-1.5 rounded text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:text-indigo-400 dark:hover:bg-indigo-950/50 transition-colors" title="Lihat Detail">
+                                        <a href="{{ route('master.supplier.show', $supplier) }}" class="p-2 rounded text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:text-indigo-400 dark:hover:bg-indigo-950/50 transition-colors" title="Lihat Detail">
                                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" /></svg>
                                         </a>
                                         @role('admin')
-                                        <a href="{{ route('master.supplier.edit', $supplier) }}" class="p-1.5 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-100 dark:hover:text-slate-300 dark:hover:bg-slate-800 transition-colors" title="Edit">
+                                        <a href="{{ route('master.supplier.edit', $supplier) }}" class="p-2 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-100 dark:hover:text-slate-300 dark:hover:bg-slate-800 transition-colors" title="Edit">
                                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Z" /></svg>
                                         </a>
                                         <button @click="toggleItem = { id: '{{ $supplier->id }}', name: '{{ $supplier->nama_supplier }}', active: {{ $supplier->is_active ? 'true' : 'false' }}, url: '{{ route('master.supplier.toggle', $supplier) }}' }; openToggle = true"
-                                                class="p-1.5 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-100 dark:hover:text-slate-300 dark:hover:bg-slate-800 transition-colors" title="{{ $supplier->is_active ? 'Nonaktifkan' : 'Aktifkan' }}">
+                                                class="p-2 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-105 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="{{ $supplier->is_active ? 'Nonaktifkan' : 'Aktifkan' }}">
                                             @if ($supplier->is_active)
                                                 <svg class="w-4 h-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 0 0 5.636 5.636m12.728 12.728A9 9 0 0 1 5.636 5.636m12.728 12.728L5.636 5.636" /></svg>
                                             @else

@@ -24,7 +24,7 @@
         @role('admin')
         <div class="shrink-0 self-start sm:self-auto">
             <a href="{{ route('penjualan.create') }}" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white rounded-xl shadow-md shadow-indigo-500/20 transition-all focus:outline-none">
-                <svg class="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                 </svg>
                 Buka Kasir POS
@@ -49,7 +49,7 @@
     <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         
         <!-- Card 1: Jumlah Transaksi -->
-        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5.5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group relative overflow-hidden">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group relative overflow-hidden">
             <div class="absolute top-0 right-0 h-24 w-24 bg-indigo-500/5 rounded-bl-full group-hover:bg-indigo-500/10 transition-colors"></div>
             <div class="flex items-start justify-between">
                 <div class="space-y-1">
@@ -66,7 +66,7 @@
         </div>
 
         <!-- Card 2: Omzet -->
-        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5.5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group relative overflow-hidden">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group relative overflow-hidden">
             <div class="absolute top-0 right-0 h-24 w-24 bg-emerald-500/5 rounded-bl-full group-hover:bg-emerald-500/10 transition-colors"></div>
             <div class="flex items-start justify-between">
                 <div class="space-y-1">
@@ -83,7 +83,7 @@
         </div>
 
         <!-- Card 3: Rata-rata -->
-        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5.5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group relative overflow-hidden">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group relative overflow-hidden">
             <div class="absolute top-0 right-0 h-24 w-24 bg-blue-500/5 rounded-bl-full group-hover:bg-blue-500/10 transition-colors"></div>
             <div class="flex items-start justify-between">
                 <div class="space-y-1">
@@ -147,7 +147,7 @@
                     Terapkan
                 </button>
                 <a href="{{ route('penjualan.index') }}" class="inline-flex items-center justify-center p-2 bg-slate-50 hover:bg-slate-100 dark:bg-slate-950 dark:hover:bg-slate-800 text-slate-400 hover:text-slate-600 rounded-xl transition-all border border-slate-200 dark:border-slate-800" title="Reset Filter">
-                    <svg class="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
                     </svg>
                 </a>
@@ -232,7 +232,7 @@
                             <div class="flex items-center justify-end gap-1.5">
                                 <!-- Details -->
                                 <a href="{{ route('penjualan.show', $penjualan->id) }}" 
-                                   class="p-1.5 text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg hover:border-indigo-500/30 transition-all" 
+                                   class="p-2 text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg hover:border-indigo-500/30 transition-all" 
                                    title="Lihat Detail Nota">
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
@@ -242,7 +242,7 @@
                                 
                                 <!-- Direct Print -->
                                 <a href="{{ route('penjualan.cetak', $penjualan->id) }}" target="_blank" 
-                                   class="p-1.5 text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg hover:border-emerald-500/30 transition-all" 
+                                   class="p-2 text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg hover:border-emerald-500/30 transition-all" 
                                    title="Cetak Struk Thermal">
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0 1 10.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0 .229 2.523a1.125 1.125 0 0 1-1.12 1.227H7.231c-.618 0-1.113-.487-1.12-1.106L6 18m11.66 0H6.34m9.68-14.333H7.98m7.7 0a48.536 48.536 0 0 1 2.3 2.288c.086.092.107.223.053.336a10.024 10.024 0 0 1-.95 1.583m-10.8 0a10.025 10.025 0 0 1-.95-1.583.344.344 0 0 1 .054-.336 48.574 48.574 0 0 1 2.3-2.288m7.7 0H7.98m0 0L6.72 8.357m1.26-4.5H16.02L17.28 8.357M7.98 3.827H16.02m-.02 4.53H8M17.66 18v-3.07a9.07 9.07 0 0 0-1.424-4.887l-.02-.03a9.07 9.07 0 0 0-6.432-3.83" />
@@ -253,7 +253,7 @@
                                 @role('admin')
                                     @if($penjualan->status !== 'Retur Penuh')
                                     <a href="{{ route('penjualan.show', $penjualan->id) }}#retur-section" 
-                                       class="p-1.5 text-slate-400 hover:text-red-600 dark:hover:text-red-400 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg hover:border-red-500/30 transition-all" 
+                                       class="p-2 text-slate-400 hover:text-red-600 dark:hover:text-red-400 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg hover:border-red-500/30 transition-all" 
                                        title="Proses Retur POS">
                                         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
